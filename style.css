@@ -67,6 +67,7 @@ button.large-button {
 }
 
 input[type="checkbox"] {
+  -webkit-appearance: none;
   appearance: none;
   height: 25px;
   width: 25px;
