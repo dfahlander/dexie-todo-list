@@ -20,7 +20,6 @@ export function AddTodoItem({ todoList }: Props) {
       <div className="todo-item-input">
         <input
           type="text"
-          autoFocus
           placeholder="Add something..."
           value={item.title}
           onChange={ev =>
