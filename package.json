@@ -10,8 +10,8 @@
     "@types/react": "16.9.56",
     "@types/react-bootstrap": "1.0.1",
     "@types/react-dom": "16.9.9",
-    "dexie": "3.1.0-alpha.5",
-    "dexie-react-hooks": "1.0.2",
+    "dexie": ">=3.1.0-alpha.1",
+    "dexie-react-hooks": "^1.0.4",
     "react": "17.0.1",
     "react-bootstrap": "1.4.0",
     "react-dom": "17.0.1"
