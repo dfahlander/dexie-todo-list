@@ -1,17 +1,23 @@
-import { faList } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { db } from "../models/db";
-import { TodoItem } from "../models/TodoItem";
-import { TodoList } from "../models/TodoList";
+import { faList } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import { db } from '../models/db';
+import { TodoItem } from '../models/TodoItem';
+import { TodoList } from '../models/TodoList';
+import { useLiveQuery } from 'dexie-react-hooks';
 
 export function AddTodoList() {
   const [isActive, setIsActive] = useState(false);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
+  const hasAnyList = useLiveQuery(async () => {
+    const listCount = await db.todoLists.count();
+    return listCount > 0;
+  });
 
   return !isActive ? (
     <button className="large-button" onClick={() => setIsActive(!isActive)}>
-      <FontAwesomeIcon icon={faList} /> Add another list
+      <FontAwesomeIcon icon={faList} />{' '}
+      {hasAnyList ? `Add another list` : `Create ToDo List`}
     </button>
   ) : (
     <div className="box">
@@ -24,9 +30,9 @@ export function AddTodoList() {
           value={title}
           onChange={ev => setTitle(ev.target.value)}
           onKeyUp={ev => {
-            if (ev.key === "Enter") {
+            if (ev.key === 'Enter') {
               db.todoLists.add({ title });
-              setTitle("");
+              setTitle('');
               setIsActive(false);
             }
           }}

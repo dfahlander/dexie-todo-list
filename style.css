@@ -7,6 +7,7 @@ div.box {
   padding: 10px;
   border: 1px solid #ddd;
   margin: 5px 0 5px 0;
+  position: relative;
 }
 div.box > h2 {
   margin: 0 0 10px 0;
@@ -18,13 +19,19 @@ button.large-button {
   font-size: 12pt;
 }
 
+.grid-row {
+  display: inline-flex;
+  width: 100%;
+  position: relative;
+}
+
 .row {
   display: inline-flex;
   border: 1px solid #ccc;
   margin: 2px;
   transition-duration: 100ms;
   font-size: 20pt;
-  width: 80vw;
+  width: 100%;
   position: relative;
 }
 .row.add-item {
@@ -38,6 +45,19 @@ button.large-button {
 
 .narrow {
   padding: 10px;
+}
+
+.todo-list-trash {
+  padding: 1.7em 0.7em 1.7em 0.7em;
+  font-size: 12pt;
+  opacity: 0.3;
+}
+.todo-list-trash:hover {
+  opacity: 1;
+}
+
+.todo-list-trash > a {
+  cursor: pointer;
 }
 
 .todo-item-trash {
@@ -66,7 +86,7 @@ button.large-button {
   padding-right: 15px;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   -webkit-appearance: none;
   appearance: none;
   height: 25px;
@@ -77,13 +97,13 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   border: 1px solid #41b883;
   background-color: #fff;
 }
 
-input[type="checkbox"]:checked::after {
-  content: "\2713";
+input[type='checkbox']:checked::after {
+  content: '\2713';
   display: block;
   font-size: 25px;
   text-align: center;
@@ -93,10 +113,10 @@ input[type="checkbox"]:checked::after {
   top: -3px;
 }
 
-input[type="checkbox"]:disabled {
+input[type='checkbox']:disabled {
   border-color: #ccf4;
 }
-input[type="text"] {
+input[type='text'] {
   border-color: #ccf4;
   height: 25px;
   width: 100%;
