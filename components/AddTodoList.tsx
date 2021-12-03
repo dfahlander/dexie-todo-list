@@ -1,6 +1,7 @@
 import { faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { db } from '../models/db';
 import { TodoItem } from '../models/TodoItem';
 import { TodoList } from '../models/TodoList';

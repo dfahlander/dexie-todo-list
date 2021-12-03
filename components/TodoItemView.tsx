@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { db } from '../models/db';
 import { TodoItem } from '../models/TodoItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

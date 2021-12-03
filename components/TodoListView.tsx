@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { TodoList } from '../models/TodoList';
 import { db } from '../models/db';

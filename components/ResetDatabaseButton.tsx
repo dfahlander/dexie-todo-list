@@ -1,6 +1,6 @@
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import * as React from "react";
 import { db, resetDatabase } from "../models/db";
 
 export function ResetDatabaseButton() {
